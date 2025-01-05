@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -16,5 +17,7 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	http.ListenAndServe(":8888", mux)
+	if err := http.ListenAndServe(":8888", mux); err != nil {
+		log.Fatal("Failed to start a server")
+	}
 }
