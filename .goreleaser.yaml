@@ -21,8 +21,8 @@ dockers:
       - amd64
       - arm64
     image_templates:
-      - "myuser/myapp:latest"
-      - "myuser/myapp:{{ .Tag }}"
+      - "aandrku/go-pipeline:latest"
+      - "aandrku/go-pipeline:{{ .Tag }}"
     dockerfile: Dockerfile
     use: docker
     skip_push: false # Set to true if you don't want to push the images during development
@@ -37,9 +37,6 @@ archives:
 
 # Release configuration (e.g., GitHub releases)
 release:
-  github:
-    owner: myuser
-    name: myrepo
   footer: |
     ---
     Released by [GoReleaser](https://goreleaser.com).
