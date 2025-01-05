@@ -2,8 +2,8 @@ version: 2
 
 # Build configuration for your Go binaries
 builds:
-  - id: default
-    main: ./cmd/app # Path to your main Go file (adjust as needed)
+  - id: pipeline
+    main: ./cmd/server 
     env:
       - CGO_ENABLED=0
     goos:
@@ -13,19 +13,6 @@ builds:
     goarch:
       - amd64
       - arm64
-
-# Docker image configuration
-dockers:
-  - goos: linux
-    goarch:
-      - amd64
-      - arm64
-    image_templates:
-      - "aandrku/go-pipeline:latest"
-      - "aandrku/go-pipeline:{{ .Tag }}"
-    dockerfile: Dockerfile
-    use: docker
-    skip_push: false # Set to true if you don't want to push the images during development
 
 # Archive configuration (e.g., tar.gz or zip)
 archives:
