@@ -9,23 +9,23 @@ builds:
       - darwin
 
 dockers:
-  - goos: linux
+- goos: linux
 
-    goarch: 
+  goarch: 
   - amd64
   - arm64
 
-  goamd64: "v2"
+goamd64: "v2"
 
-  image_templates:
-    - "myuser/myimage:latest"
-    - "myuser/myimage:{{ .Tag }}"
+image_templates:
+  - "myuser/myimage:latest"
+  - "myuser/myimage:{{ .Tag }}"
 
-  skip_push: false
-  use: docker
+skip_push: false
+use: docker
 
-  push_flags:
-    - --tls-verify=false
+push_flags:
+  - --tls-verify=false
 
 archives:
   - format: tar.gz
