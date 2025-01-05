@@ -9,7 +9,7 @@ builds:
       - darwin
 
 dockers:
-    goos: linux
+  - goos: linux
 
     goarch: 
     - amd64
