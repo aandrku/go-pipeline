@@ -20,7 +20,7 @@ jobs:
         run: docker build -t ghcr.io/aandrku/go-pipeline:latest .
 
       - name: Push Docker Image
-        run: docker push ghcr.io/myusername/go-pipeline:latest
+        run: docker push ghcr.io/aandrku/go-pipeline:latest
 
   release:
     runs-on: ubuntu-latest
